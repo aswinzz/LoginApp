@@ -16,11 +16,12 @@ This Is A Basic Login App Made Using Nodejs.Here You Can Create An Account And L
 
 * git clone https://github.com/aswinzz/LoginApp.git
 
-* cd LoginApp
+* `cd LoginApp`
 
-* npm install 
+* Run `npm install` 
 
-* node app
+* Run `node app`
 
+* Open `localhost:3000` in any browser
 
  
