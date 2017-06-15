@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var User = require('../models/user');
 var bcrypt = require('bcryptjs');
+var flash = require('connect-flash');
 
 
 
@@ -32,6 +33,7 @@ router.post('/', function(req, res) {
         
         });
       });
+      req.flash('success_msg', 'password Successfully changed');
       res.redirect('/')
     
   

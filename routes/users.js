@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
+var flash = require('connect-flash');
 var bluebird = require('bluebird');
 var crypto = bluebird.promisifyAll(require('crypto'));
 var async = require('async');
@@ -88,7 +89,7 @@ router.post('/forgot', function(req, res, next) {
       });
     },
     function(token, user, done) {
-      var smtpTransport = nodemailer.createTransport('smtps://user%40gmail.com:pass@smtp.gmail.com');
+      var smtpTransport = nodemailer.createTransport('smtps://mail%40gmail.com:pass@smtp.gmail.com');
       var mailOptions = {
         to: user.email,
         subject: 'Node.js Password Reset',
@@ -106,6 +107,7 @@ router.post('/forgot', function(req, res, next) {
     if (err) return next(err);
     res.redirect('/users/forgot');
   });
+  req.flash('success_msg', 'An Email Has Been Send To Your MailID');
 });
 
 router.get('/reset/:token', function(req, res) {
@@ -144,6 +146,8 @@ router.post('/reset/:token', function(req, res) {
         
         });
       });
+      
+      req.flash('success_msg', 'Successfully Changed Password');
       res.redirect('/users/login')
     
   
