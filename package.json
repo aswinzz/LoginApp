@@ -8,15 +8,18 @@
   "description": "simple authentication system",
   "main": "app.js",
   "scripts": {
-    "start" : "node app.js"
+    "start": "node app.js"
   },
   "author": "aswin",
   "license": "ISC",
   "dependencies": {
+    "async": "^2.4.1",
     "bcryptjs": "*",
+    "bluebird": "^3.5.0",
     "body-parser": "*",
     "connect-flash": "*",
     "cookie-parser": "*",
+    "crypto": "0.0.3",
     "express": "*",
     "express-handlebars": "*",
     "express-messages": "*",
@@ -24,8 +27,11 @@
     "express-validator": "*",
     "mongodb": "*",
     "mongoose": "*",
+    "nodemailer": "^4.0.1",
+    "nodemailer-smtp-transport": "^2.7.4",
     "passport": "*",
     "passport-http": "*",
-    "passport-local": "*"
+    "passport-local": "*",
+    "xoauth2": "^1.2.0"
   }
 }

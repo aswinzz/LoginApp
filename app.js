@@ -10,11 +10,11 @@ var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var mongo = require('mongodb');
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/loginapp');
+mongoose.connect('mongodb://localhost/login');
 var db = mongoose.connection;
 var routes = require('./routes/index');
 var users = require('./routes/users');
-
+var nodemailer = require('nodemailer');
 // Init App
 var app = express();
 
@@ -33,7 +33,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Express Session
 app.use(session({
-    secret: 'secret',
+    secret: 'session secret key',
     saveUninitialized: true,
     resave: true
 }));
