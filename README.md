@@ -1,5 +1,6 @@
 # Details
-This Is A Basic Login App Made Using Nodejs.Here You Can Create An Account And Login Using That.I Have used Passport for login and Mongodb as the database
+This Is A Basic Login App Made Using Nodejs.Here You Can Create An Account And Login Using That.I Have used Passport for login and Mongodb as the database.
+I have added a facility for reseting password,An Email with the resetting link will be send to your email just click the link and reset your password :wink:
 
 
 
@@ -18,7 +19,11 @@ This Is A Basic Login App Made Using Nodejs.Here You Can Create An Account And L
 
 * `cd LoginApp`
 
-* Run `npm install` 
+* Open `users.js` present in `routes` folder
+
+* In line number 91 - `var smtpTransport = nodemailer.createTransport('smtps://user%40gmail.com:pass@smtp.gmail.com');` change `users` to yours/organization's email id and `pass` to the password.
+
+* Run `npm install`
 
 * Run `node app`
 
