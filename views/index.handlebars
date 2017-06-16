@@ -1,12 +1,46 @@
+ <style type="text/css">
+ .profile-link {
+  display: inline-block;
+  padding: 1em;
+  width: 10em;
+  max-width: 80%;
+}
+.profile-pic {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  box-shadow: #222 0.2em 0.2em 1em;
+  
+  -webkit-filter: grayscale(100%) 
+          brightness(135%)
+          contrast(120%);
+  filter: grayscale(50%) 
+          brightness(75%)
+          contrast(75%);
+  
+  transition: filter 0.3s, box-shadow 0.3s;
+  -webkit-transition: filter 0.3s, -webkit-filter 0.3s, box-shadow 0.3s;
+}
+.profile-link:hover .profile-pic, 
+.profile-link:focus .profile-pic {
+  -webkit-filter: none;
+  filter: none;
+  box-shadow: #224 0.2em 0.2em 0.6em 0.1em;
+}
+</style>
  <h2 class="page-header">Dashboard</h2>
 <p>Welcome to your dashboard</p>  
+<a class="profile-link" href="{{ user.pic }}">
+  <img class="profile-pic" src="{{ user.pic }}"/></a>
+<br>
 <strong>User Name : {{ user.username }}</strong><br>
-<strong>Email : {{ user.email }}</strong><br> <br><br>
+<strong>Email : {{ user.email }}</strong><br> 
 <form method="post">
-<div class="form-group">
+<div class="form-group" hidden>
     <input type="email" class="form-control" name="email" value="{{ user.email }}">
   </div>
   <div class="form-group">
+  <label>Reset Password :</label>
     <input type="password" class="form-control" placeholder="New Password" name="password">
   </div>
    <button type="submit" class="btn btn-default">Reset</button>

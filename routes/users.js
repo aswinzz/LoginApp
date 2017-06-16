@@ -10,6 +10,7 @@ var User = require('../models/user');
 var nodemailer = require('nodemailer');
 var smtpTransport = require('nodemailer-smtp-transport');
 var bcrypt = require('bcryptjs');
+
 // Register
 router.get('/register', function(req, res){
 	res.render('register');
@@ -27,7 +28,7 @@ router.post('/register', function(req, res){
 	var username = req.body.username;
 	var password = req.body.password;
 	var password2 = req.body.password2;
-
+    var pic = req.body.pic;
 	// Validation
 	req.checkBody('name', 'Name is required').notEmpty();
 	req.checkBody('email', 'Email is required').notEmpty();
@@ -47,7 +48,8 @@ router.post('/register', function(req, res){
 			name: name,
 			email:email,
 			username: username,
-			password: password
+			password: password,
+			pic: pic
 		});
 
 		User.createUser(newUser, function(err, user){
