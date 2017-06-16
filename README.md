@@ -1,6 +1,7 @@
 # Details
 This Is A Basic Login App Made Using Nodejs.Here You Can Create An Account And Login Using That.I Have used Passport for login and Mongodb as the database.
 I have added a facility for reseting password,An Email with the resetting link will be send to your email just click the link and reset your password :wink:
+You can add a profile pic too...Just give it a try :smile:
 
 
 
@@ -9,6 +10,9 @@ I have added a facility for reseting password,An Email with the resetting link w
 
 ![scr2](https://github.com/aswinzz/LoginApp/blob/master/scr2.png?raw=true)
 
+![scr3](https://github.com/aswinzz/LoginApp/blob/master/scr3.png?raw=true)
+
+![scr4](https://github.com/aswinzz/LoginApp/blob/master/scr4.png?raw=true)
 
  Those Who Wish To Use This Login App For Their App Can Use It.
 
