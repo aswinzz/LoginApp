@@ -15,7 +15,7 @@ You can add a profile pic too...Just give it a try :smile:
 ![scr4](https://github.com/aswinzz/LoginApp/blob/master/scr4.png?raw=true)
 
  Those Who Wish To Use This Login App For Their App Can Use It.
-
+ All Kind of contributions are welcome :blush:
 
 # Install
 
@@ -32,5 +32,6 @@ You can add a profile pic too...Just give it a try :smile:
 * Run `node app`
 
 * Open `localhost:3000` in any browser
+
 
  
