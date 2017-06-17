@@ -30,14 +30,20 @@
 </style>
  <h2 class="page-header">Dashboard</h2>
 <p>Welcome to your dashboard</p>  
+{{#if user.pic }}
 <a class="profile-link" href="{{ user.pic }}">
   <img class="profile-pic" src="{{ user.pic }}"/></a>
 <br>
+{{/if}}
 <strong>User Name : {{ user.username }}</strong><br>
 <strong>Email : {{ user.email }}</strong><br> 
 <form method="post">
 <div class="form-group" hidden>
     <input type="email" class="form-control" name="email" value="{{ user.email }}">
+  </div>
+  <div class="form-group">
+  <label>Chanfe Profile pic:</label>
+    <input type="text" class="form-control" placeholder="Link" name="pic">
   </div>
   <div class="form-group">
   <label>Reset Password :</label>
@@ -46,5 +52,21 @@
    <button type="submit" class="btn btn-default">Reset</button>
   
 </form>
+<br>
+<hr>
+
+<h2 class="page-header">All Users</h2>
+{{#each users}}
+
+   {{#if this.pic }}
+<a class="profile-link" href="{{ this.pic }}">
+  <img class="profile-pic" src="{{ this.pic }}" align="left" /></a>
+
+{{/if}}
+<br>
+<strong>User Name : {{ this.username }}</strong><br>
+<strong>Email : {{ this.email }}</strong><br> 
+<hr>
+{{/each}}
 &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp    
 <button class="btn btn-primary"><a href="/users/logout"><font color="black">Logout</font></a></button>

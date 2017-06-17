@@ -10,14 +10,21 @@ var flash = require('connect-flash');
 
 // Get Homepage
 router.get('/', ensureAuthenticated, function(req, res){
-	res.render('index');
+	
+	User.find(function(err, docs){
+    res.render('index', {users: docs });	
+  });
 });
 
 router.post('/', function(req, res) {
     
       User.findOne({ email: req.body.email}, function(err, user) {
-        
-
+        var oldpic = user.pic;
+        user.pic = req.body.pic;
+        if(!user.pic){
+        	user.pic=oldpic;
+        }
+        if(req.body.password){
         bcrypt.genSalt(10, function(err, salt) {
 	    bcrypt.hash(req.body.password, salt, function(err, hash) {
 	        user.password = hash;
@@ -32,8 +39,9 @@ router.post('/', function(req, res) {
         
         
         });
+    }
       });
-      req.flash('success_msg', 'password Successfully changed');
+      req.flash('success_msg', 'Profile Details Successfully changed');
       res.redirect('/')
     
   
